@@ -21,11 +21,16 @@ def printStats(statList):
 		print
 
 while True:
-	person = raw_input("Enter player name: ")
-	opp = raw_input("Enter opposing team name: ")
+	person = raw_input("Enter player name (exit to quit): ")
 	if (person == 'exit'):
 		break
+	opp = raw_input("Enter opposing team name: ")
+	print
 	print "--LAST FIVE GAMES--"
 	printStats(getStatsForLastFiveGames(person))
 	print "--PERFORMANCE AGAINST " + opp + "--"
-	printStats(getStatsAgainstTeam(person, opp))
+	list = getStatsAgainstTeam(person, opp)
+	if (len(list) == 0):
+		print "Player has not played this team."
+	else:
+		printStats(getStatsAgainstTeam(person, opp))
