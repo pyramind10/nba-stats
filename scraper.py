@@ -1,10 +1,11 @@
 # Scrapes data from basketball-reference.com for a given player
 
 from lxml import html
+from lxml import etree
 import requests
 import private
 
-# playerName should be in format: "Firstname LastName"
+# playerName should be in format: "Firstname Lastname"
 # Example: "Lebron James"
 
 # Globals:
@@ -18,14 +19,22 @@ def condensePage(page):
 	return page[indexOfStart:indexOfEnd]
 
 def getStatsForPlayer(playerName, year):
+	num = "01"
 	nameArr = playerName.split(' ')
 	firstName = nameArr[0].lower()
 	lastName = nameArr[1].lower()
-	urlStr = private.getURL(firstName, lastName, year)
+	if (len(nameArr) > 2):
+		num = nameArr[2]
+	urlStr = private.getURL(firstName, lastName, year, num)
 
 	# Retrieve the HTML page in a condensed form
 	condensedPage = condensePage(requests.get(urlStr).content)
-	tree = html.fromstring(condensedPage)
+	try:
+		tree = html.fromstring(condensedPage)
+	except etree.XMLSyntaxError:
+		print "Player Not Found."
+		print
+		exit()
 
 	# Retrieve the two forms of headers 
 	file = open(headerFile)
