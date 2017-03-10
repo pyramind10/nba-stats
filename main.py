@@ -1,3 +1,8 @@
+# Continuous loop that prompts for a player and the player's
+# opposing team. Prints out stats for last five games played
+# as well as performance against the specified team.
+# To exit loop, use 'exit'
+
 import statutilities
 from statutilities import center
 
