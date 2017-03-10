@@ -1,4 +1,4 @@
-# Scrapes data from basketball-reference.com for a given player
+# Scrapes data from set source for a given player
 
 from lxml import html
 from lxml import etree
