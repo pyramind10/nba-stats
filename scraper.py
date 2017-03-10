@@ -55,7 +55,7 @@ def getStatsForPlayer(playerName, year):
 	for count in range(0, numGames):
 		dict = {}
 		i = 0
-		if condensedPage.find('<th', lastIndex+3) == -1:
+		if condensedPage.find(startOfRow, lastIndex+len(startOfRow)) == -1:
 			thisRow = condensedPage[lastIndex:]
 		else:
 			thisRow = condensedPage[lastIndex:condensedPage.find(startOfRow, lastIndex+len(startOfRow))]
