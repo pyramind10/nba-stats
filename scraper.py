@@ -19,22 +19,33 @@ def condensePage(page):
 	return page[indexOfStart:indexOfEnd]
 
 def getStatsForPlayer(playerName, year):
-	num = "01"
+	num = 1
 	nameArr = playerName.split(' ')
 	firstName = nameArr[0].lower()
 	lastName = nameArr[1].lower()
 	if (len(nameArr) > 2):
 		num = nameArr[2]
-	urlStr = private.getURL(firstName, lastName, year, num)
 
+	foundPlayer = False
+	keepLooping = True
 	# Retrieve the HTML page in a condensed form
-	condensedPage = condensePage(requests.get(urlStr).content)
-	try:
-		tree = html.fromstring(condensedPage)
-	except etree.XMLSyntaxError:
-		print "Player Not Found."
-		print
-		exit()
+	while foundPlayer == False:
+		urlStr = private.getURL(firstName, lastName, year, "0" + str(num))
+		try:
+			condensedPage = condensePage(requests.get(urlStr).content)
+		except requests.exceptions.ConnectionError:
+			print "Cannot Connect.\n"
+			exit()
+		try:
+			tree = html.fromstring(condensedPage)
+		except etree.XMLSyntaxError:
+			num+=1
+			if num == 4:
+				print "Player Not Found.\n"
+				exit()
+		else:
+			foundPlayer = True
+
 
 	# Retrieve the two forms of headers 
 	file = open(headerFile)

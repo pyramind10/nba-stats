@@ -21,5 +21,3 @@ def getStats(fileName):
 
 	return games
 
-getStats("aaron-gordon.csv")
-

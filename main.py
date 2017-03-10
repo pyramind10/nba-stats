@@ -11,7 +11,7 @@ while True:
 	print center(title)
 	print
 	print center("--LAST FIVE GAMES--")
-	statutilities.printStats(statutilities.getStatsForLastFiveGames(person))
+	statutilities.printStats(statutilities.getStatsForLastNGames(person, 5))
 	print center("--PERFORMANCE AGAINST " + opp + "--")
 	listT = statutilities.getStatsAgainstTeam(person, opp)
 	if (len(listT) == 0):
