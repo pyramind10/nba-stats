@@ -11,18 +11,15 @@ while True:
 	if (person == 'exit'):
 		break
 	opp = raw_input("Enter opposing team name: ").upper()
-	print
-	title = "=========" + person.upper() + "========="
-	print center(title)
-	print
-	print center("--LAST FIVE GAMES--")
-	statutilities.printStats(statutilities.getStatsForLastNGames(person, 5))
-	print center("--PERFORMANCE AGAINST " + opp + "--")
+	numGames = int(raw_input("Enter # of recent games: "))
+
+	statutilities.printStats(statutilities.getStatsForLastNGames(person, numGames))
 	listT = statutilities.getStatsAgainstTeam(person, opp)
+	#print center("/// " + opp.upper() + " Adjusted Defensive Ranking: " + str(statutilities.getAdjDefRanking(opp)) + " \\\\\\")
 	if (len(listT) == 0):
 		print "Player has not played this team."
 		print
 	else:
-		statutilities.printStats(statutilities.getStatsAgainstTeam(person, opp))
+		statutilities.printStats(listT)
 	print center("==========================")
 	print
