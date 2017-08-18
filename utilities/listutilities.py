@@ -21,7 +21,7 @@ class bcolors:
     UNDERLINE = '\033[4m'
 
 def readList(fileName):
-	file = open("lists/" + fileName)
+	file = open("players/" + fileName)
 	players = {} # dict containing statLists
 	oppTeamNames = {} # dict containing opposing team names
 	avgLRScore = {} # dict containing average LR scores
