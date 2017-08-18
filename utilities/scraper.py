@@ -1,8 +1,10 @@
 # Scrapes data from set source for a given player
 
+import sys
 from lxml import html
 from lxml import etree
 import requests
+sys.path.insert(0, 'private/')
 import private
 
 # playerName should be in format: "Firstname Lastname"
@@ -47,7 +49,7 @@ def getStatsForPlayer(playerName, year):
 			foundPlayer = True
 
 
-	# Retrieve the two forms of headers 
+	# Retrieve the two forms of headers
 	file = open(headerFile)
 	tableHeadersStr = file.readline()
 	dataStatsStr = file.readline();
@@ -91,6 +93,7 @@ def getStatsForPlayer(playerName, year):
 	#for s in gameStats:
 	#	print s
 	#	print
+	#print gameStats[0]['AST'] -> assists for first game
 	return gameStats
 
 def getAbbrevFromFullTeamName(fullTeamName):
@@ -164,7 +167,7 @@ def getTeamRatings():
 		exit()
 	tree = html.fromstring(condensedPage)
 
-	# Retrieve the two forms of headers 
+	# Retrieve the two forms of headers
 	file = open(headerFile)
 	file.readline()
 	file.readline()
@@ -206,13 +209,3 @@ def getTeamRatings():
 
 	#print teamStats['GSW']['ORtg']
 	return teamStats
-
-
-
-
-
-
-
-
-
-

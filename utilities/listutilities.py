@@ -21,7 +21,7 @@ class bcolors:
     UNDERLINE = '\033[4m'
 
 def readList(fileName):
-	file = open(fileName)
+	file = open("lists/" + fileName)
 	players = {} # dict containing statLists
 	oppTeamNames = {} # dict containing opposing team names
 	avgLRScore = {} # dict containing average LR scores
@@ -44,7 +44,7 @@ def readList(fileName):
 	if (len(sortedAvgs) < l):
 		l = len(sortedAvgs)
 	sortedAverages = sortedAvgs[:l]
-	# Each item in sortedAverages is a tuple, 
+	# Each item in sortedAverages is a tuple,
 	# where avg[0] is the player name and avg[1] is the LRScore average
 	# Example: sortedAverages = [('James Harden', 45.5), ('Lebron James', 55.2)]
 
@@ -82,10 +82,3 @@ def readList(fileName):
 			print su.center("Player did not play " + oppTeamNames[avg[0]].upper() + "\n")
 		else:
 			su.printStats(listT)
-
-
-
-
-
-
-

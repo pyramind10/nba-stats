@@ -3,6 +3,8 @@
 # as well as performance against the specified team.
 # To exit loop, use 'exit'
 
+import sys
+sys.path.insert(0, 'utilities/')
 import statutilities
 from statutilities import center
 

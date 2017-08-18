@@ -1,0 +1,4 @@
+Rk,G,Date,Age,Tm,Loc,Opp,Strk,GS,MP,FG,FGA,FG%,3P,3PA,3P%,FT,FTA,FT%,ORB,DRB,TRB,AST,STL,BLK,TOV,PF,PTS,GmSc,+/-
+ranker, game_season, date_game, age, team_id, game_location, opp_id, game_result, gs, mp, fg, fga, fg_pct, fg3, fg3a, fg3_pct, ft, fta, ft_pct, orb, drb, trb, ast, stl, blk, tov, pf, pts, game_score, plus_minus
+Rk,Team,Conf,Div,W,L,W/L%,MOV,ORtg,DRtg▲,NRtg,MOV/A,ORtg/A,DRtg/A,NRtg/A
+ranker, team_name, conf_id, div_id, wins, losses, win_loss_pct, mov, off_rtg, def_rtg, net_rtg, mov_adj, off_rtg_adj, def_rtg_adj, net_rtg_adj
