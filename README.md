@@ -1,6 +1,11 @@
 # NBA-Stats
 NBA-Stats includes python scripts to obtain stats for specific NBA players for easy access and manipulation. Example usage: Viewing stats of Dirk Nowitzki for his last five games played. Made and meant for fantasy basketball and easy access to useful statistical information.
 
+## Packages required
+
+- lxml
+- requests
+
 ## Usage
 
 ### Player by player
@@ -25,11 +30,6 @@ Example for John Wall playing against the Brooklyn Nets:
 ```
 john wall, brk
 ```
-
-## Packages required
-
-- lxml
-- requests
 
 ## Notes
 
