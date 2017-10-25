@@ -8,7 +8,7 @@ teamStats = getTeamRatings()
 
 # Get shortened statList only against team teamName
 def getStatsAgainstTeam(playerName, teamName):
-	statsList = getStatsForPlayer(playerName, 2017)
+	statsList = getStatsForPlayer(playerName, 2018)
 	newList = []
 	teamName = teamName.upper()
 	for stat in statsList:
@@ -20,7 +20,7 @@ def getStatsAgainstTeam(playerName, teamName):
 
 # Get shortened statList for last N games
 def getStatsForLastNGames(playerName, n):
-	statsList = getStatsForPlayer(playerName, 2017)
+	statsList = getStatsForPlayer(playerName, 2018)
 	if len(statsList) < n:
 		n = len(statsList)
 	statsList[-n]['TITLE'] = "LAST " + str(n) + " GAMES"
@@ -140,5 +140,3 @@ def printStats(statList):
 	#print center("AVERAGE FD SCORE: round(avgFD))
 	print
 	return avgLR, lrStdDev, avgFD, fdStdDev # Return averages and std devs for potential use
-
-
