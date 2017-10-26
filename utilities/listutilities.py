@@ -1,6 +1,6 @@
 # Utilities to read in lists of players and get averages, etc.
 # Format of one line in .txt (no space between player and opp team):
-# lebron james,gsw
+# lebron james, gsw
 
 import statutilities as su
 import time
