@@ -1,5 +1,6 @@
 #! /bin/bash
 
+# Runs all commands in parallel
 python list.py 5star.txt 1> results/5star-results.txt 2> log/5star-log.txt &
 python list.py 4star.txt 1> results/4star-results.txt 2> log/4star-log.txt &
 python list.py 3star.txt 1> results/3star-results.txt 2> log/3star-log.txt &
