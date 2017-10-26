@@ -31,6 +31,10 @@ Example for John Wall playing against the Brooklyn Nets:
 john wall, brk
 ```
 
+## Todo
+
+- Add player to player matchups for starters
+
 ## Notes
 
 Usage requires *private.py*
